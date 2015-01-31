@@ -1,0 +1,9 @@
+.character .character-img {
+  width: 400px;
+  height: 350px;
+}
+
+.character .character-name {
+  font-size: 20px;
+  font-weight: bold;
+}
