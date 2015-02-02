@@ -3,15 +3,15 @@ var React = require('react');
 var Character = React.createClass({
   render: function () {
     return (
-      <div className="character">
-        <div className="col-xs-12 col-sm-4 col-md-3">
-          <div className="thumbnail">
+      <div className="row character">
+        <div className="col-xs-12">
+          <div className="col-xs-4">
             <img className="character-image" src={this.props.image}/>
-            <div className="caption">
-              <span className="character-name">{this.props.name}</span>
-              <div className="character-description">
-                <p>{this.props.description}</p>
-              </div>
+          </div>
+          <div className="col-xs-8">
+            <span className="character-name">{this.props.name}</span>
+            <div className="character-description">
+              <p>{this.props.description}</p>
             </div>
           </div>
         </div>
