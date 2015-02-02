@@ -8,24 +8,25 @@ Once you have your **Public Key**, create a ```api-key.js``` file in ```js```
 dir and add a line like this:
 
 ```js
-  window.key = 'apikey=<your-public-key>';
+window.key = 'apikey=<your-public-key>';
 ```
 
 ## Running the app
 To start the app use the following commands:
 
 ```bash
-  $ npm install
-  $ npm run watch
+$ npm install
+$ npm run watch
 ```
 
-And finally open the index.html file in your browser. Have fun :)
+And finally open the index.html file in your browser. Have fun :ghost:
 
 ## TODO
 - [ ] Add pagination
 - [ ] Fix the mobile layout
 - [ ] Implement the order endpoints of the API
 - [ ] Add server side rendering
+- [ ] Upload the app to Heroku
 
 ## License
 
