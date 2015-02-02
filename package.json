@@ -1,0 +1,34 @@
+{
+  "name": "excelsior",
+  "version": "0.0.0",
+  "description": "Testing out Marvel's API with React ",
+  "main": "index.js",
+  "dependencies": {
+    "browserify": "^8.1.1",
+    "react": "^0.12.2",
+    "reactify": "^1.0.0",
+    "superagent": "^0.21.0",
+    "watchify": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adrrian17/excelsior.git"
+  },
+  "author": "Adrian Ayala",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adrrian17/excelsior/issues"
+  },
+  "homepage": "https://github.com/adrrian17/excelsior",
+  "browserify": {
+    "transform": [
+      [
+        "reactify"
+      ]
+    ]
+  }
+}
