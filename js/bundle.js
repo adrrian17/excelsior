@@ -11,13 +11,14 @@ var Character = React.createClass({displayName: "Character",
       React.createElement("div", {className: "row character"}, 
         React.createElement("div", {className: "col-xs-12"}, 
           React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-xs-4"}, 
+            React.createElement("div", {className: "col-xs-3"}, 
               React.createElement("img", {className: "character-image", src: this.props.image})
             ), 
-            React.createElement("div", {className: "col-xs-8"}, 
+            React.createElement("div", {className: "col-xs-9"}, 
               React.createElement("span", {className: "character-name"}, this.props.name), 
               React.createElement("div", {className: "character-description"}, 
-                React.createElement("p", null, this.props.description)
+                React.createElement("p", null, this.props.description), 
+                React.createElement("p", null, React.createElement("a", {href: this.props.details}, "More details"))
               )
             )
           )
@@ -43,9 +44,10 @@ var CharactersList = React.createClass({displayName: "CharactersList",
         this.props.items.map(function(item, index) {
           var name = item.name;
           var image = item.thumbnail.path+'.'+item.thumbnail.extension;
-          var description = item.description;
+          var description = item.description ? item.description : 'No description';
+          var details = item.urls[0].url;
 
-          return React.createElement(Character, {key: index, name: name, image: image, description: description});
+          return React.createElement(Character, {key: index, details: details, name: name, image: image, description: description});
         })
       
       )
@@ -68,9 +70,8 @@ var baseUrl = 'http://gateway.marvel.com'
 var charactersUrl = baseUrl+'/v1/public/characters?'+key
 
 request.get(charactersUrl, function(res) {
-  console.log(res.body.data.results)
-
   var items = res.body.data.results;
+
   React.render(React.createElement(CharactersList, {items: items}), document.getElementById('content'));
 });
 

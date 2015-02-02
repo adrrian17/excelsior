@@ -9,8 +9,7 @@ var baseUrl = 'http://gateway.marvel.com'
 var charactersUrl = baseUrl+'/v1/public/characters?'+key
 
 request.get(charactersUrl, function(res) {
-  console.log(res.body.data.results)
-
   var items = res.body.data.results;
+
   React.render(<CharactersList items={items}/>, document.getElementById('content'));
 });
