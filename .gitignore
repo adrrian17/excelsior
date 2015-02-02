@@ -29,3 +29,6 @@ node_modules
 
 # OS X
 .DS_Store
+
+# Public Key
+js/api-key.js
