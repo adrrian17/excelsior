@@ -2,9 +2,9 @@
   margin-bottom: 25px;
 }
 
-.character .character-img {
-  width: 400px;
-  height: 350px;
+.character .character-image {
+  width: 250px;
+  height: 250px;
 }
 
 .character .character-name {
