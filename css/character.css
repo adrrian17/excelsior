@@ -1,3 +1,7 @@
+.character {
+  margin-bottom: 25px;
+}
+
 .character .character-img {
   width: 400px;
   height: 350px;
