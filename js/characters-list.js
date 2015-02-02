@@ -1,6 +1,5 @@
 var Character = require('./character');
 var React = require('react');
-var _ = require('underscore')
 
 var CharactersList = React.createClass({
   render: function () {
