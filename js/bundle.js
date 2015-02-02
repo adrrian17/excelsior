@@ -6,22 +6,54 @@ window.key = 'apikey=0ae6b1a7def3946e852a6fa5e76a0423';
 var React = require('react');
 
 var Character = React.createClass({displayName: "Character",
+  getThumbnail: function() {
+    var image = this.props.character.thumbnail.path+'.'+this.props.character.thumbnail.extension;
+
+    return (
+      React.createElement("img", {className: "character-image", src: image})
+    )
+  },
+
+  getName: function() {
+    return (
+      React.createElement("span", {className: "character-name"}, 
+        this.props.character.name
+      )
+    );
+  },
+
+  getDescription: function() {
+    var description = this.props.character.description ? this.props.character.description : 'No description'
+
+    return (
+      React.createElement("p", null, 
+        description
+      )
+    )
+  },
+
+  getLinks: function() {
+    return (
+      React.createElement("p", null, 
+        React.createElement("a", {href: this.props.character.urls[0].url}, "Wiki"), "|", 
+        React.createElement("a", {href: this.props.character.urls[1].url}, "More details")
+      )
+    )
+  },
+
   render: function () {
     return (
       React.createElement("div", {className: "row character"}, 
         React.createElement("div", {className: "col-xs-12"}, 
           React.createElement("div", {className: "row"}, 
             React.createElement("div", {className: "col-xs-3"}, 
-              React.createElement("img", {className: "character-image", src: this.props.image})
+              this.getThumbnail()
             ), 
             React.createElement("div", {className: "col-xs-9"}, 
-              React.createElement("span", {className: "character-name"}, this.props.name), 
+                this.getName(), 
               React.createElement("div", {className: "character-description"}, 
-                React.createElement("p", null, this.props.description), 
-                React.createElement("p", null, 
-                  React.createElement("a", {href: this.props.wiki}, "Wiki"), "|", 
-                  React.createElement("a", {href: this.props.details}, "More details")
-                )
+                this.getDescription(), 
+                this.getLinks()
               )
             )
           )
@@ -42,17 +74,11 @@ var CharactersList = React.createClass({displayName: "CharactersList",
   render: function () {
     return (
       React.createElement("div", null, 
-      
-        this.props.items.map(function(item, index) {
-          var name = item.name;
-          var image = item.thumbnail.path+'.'+item.thumbnail.extension;
-          var description = item.description ? item.description : 'No description';
-          var details = item.urls[0].url;
-          var wiki = item.urls[1].url;
-
-          return React.createElement(Character, {key: index, wiki: wiki, details: details, name: name, image: image, description: description});
-        })
-      
+        
+          this.props.items.map(function(item, index) {
+            return React.createElement(Character, {key: index, character: item});
+          })
+        
       )
     );
   }
