@@ -1,4 +1,4 @@
-# excelsior
+# Excelsior
 This is a test using [React] and the [Marvel's API].
 
 ## Geting started
@@ -25,6 +25,7 @@ And finally open the index.html file in your browser. Have fun :)
 - [ ] Add pagination
 - [ ] Fix the mobile layout
 - [ ] Implement the order endpoints of the API
+- [ ] Add server side rendering
 
 ## License
 
