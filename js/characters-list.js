@@ -11,8 +11,9 @@ var CharactersList = React.createClass({
           var image = item.thumbnail.path+'.'+item.thumbnail.extension;
           var description = item.description ? item.description : 'No description';
           var details = item.urls[0].url;
+          var wiki = item.urls[1].url;
 
-          return <Character key={index} details={details} name={name} image={image} description={description}/>;
+          return <Character key={index} wiki={wiki} details={details} name={name} image={image} description={description}/>;
         })
       }
       </div>

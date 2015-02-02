@@ -18,7 +18,10 @@ var Character = React.createClass({displayName: "Character",
               React.createElement("span", {className: "character-name"}, this.props.name), 
               React.createElement("div", {className: "character-description"}, 
                 React.createElement("p", null, this.props.description), 
-                React.createElement("p", null, React.createElement("a", {href: this.props.details}, "More details"))
+                React.createElement("p", null, 
+                  React.createElement("a", {href: this.props.wiki}, "Wiki"), "|", 
+                  React.createElement("a", {href: this.props.details}, "More details")
+                )
               )
             )
           )
@@ -45,8 +48,9 @@ var CharactersList = React.createClass({displayName: "CharactersList",
           var image = item.thumbnail.path+'.'+item.thumbnail.extension;
           var description = item.description ? item.description : 'No description';
           var details = item.urls[0].url;
+          var wiki = item.urls[1].url;
 
-          return React.createElement(Character, {key: index, details: details, name: name, image: image, description: description});
+          return React.createElement(Character, {key: index, wiki: wiki, details: details, name: name, image: image, description: description});
         })
       
       )

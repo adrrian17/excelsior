@@ -13,7 +13,10 @@ var Character = React.createClass({
               <span className="character-name">{this.props.name}</span>
               <div className="character-description">
                 <p>{this.props.description}</p>
-                <p><a href={this.props.details}>More details</a></p>
+                <p>
+                  <a href={this.props.wiki}>Wiki</a>|
+                  <a href={this.props.details}>More details</a>
+                </p>
               </div>
             </div>
           </div>
