@@ -9,7 +9,7 @@ var CharactersList = React.createClass({
       {
         this.props.items.map(function(item, index) {
           var name = item.name;
-          var image = item.image;
+          var image = item.thumbnail.path+'.'+item.thumbnail.extension;
           var description = item.description;
 
           return <Character key={index} name={name} image={image} description={description}/>;
