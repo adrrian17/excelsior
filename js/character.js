@@ -2,7 +2,12 @@ var React = require('react');
 
 var Character = React.createClass({
   getThumbnail: function() {
-    var image = this.props.character.thumbnail.path+'.'+this.props.character.thumbnail.extension;
+    var image = 'http://placehold.it/250x250';
+
+    if(this.props.character.thumbnail) {
+      image = this.props.character.thumbnail.path+'.'+this.props.character.thumbnail.extension;
+    }
+
 
     return (
       <img className="character-image" src={image}/>
