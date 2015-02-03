@@ -32,3 +32,6 @@ node_modules
 
 # Public Key
 js/api-key.js
+
+# Browserify Bundle
+js/bundle.js
