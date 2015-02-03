@@ -8,7 +8,6 @@ var Character = React.createClass({
       image = this.props.character.thumbnail.path+'.'+this.props.character.thumbnail.extension;
     }
 
-
     return (
       <img className="character-image" src={image}/>
     )
@@ -43,14 +42,12 @@ var Character = React.createClass({
 
   render: function () {
     return (
-      <div className="row character">
-        <div className="col-xs-12">
-          <div className="row">
-            <div className="col-xs-3">
-              {this.getThumbnail()}
-            </div>
-            <div className="col-xs-9">
-                {this.getName()}
+      <div className="character">
+        <div className="col-xs-12 col-sm-3">
+          <div className="thumbnail">
+            {this.getThumbnail()}
+            <div className="caption">
+              <span className="character-name">{this.getName()}</span>
               <div className="character-description">
                 {this.getDescription()}
                 {this.getLinks()}
