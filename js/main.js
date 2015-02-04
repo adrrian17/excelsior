@@ -1,4 +1,4 @@
-var CharactersList = require('./characters-list');
+var CharactersGrid = require('./characters-grid');
 var React = require('react');
 var request = require('superagent');
 
@@ -11,5 +11,5 @@ var charactersUrl = baseUrl+'/v1/public/characters?'+key
 request.get(charactersUrl, function(res) {
   var items = res.body.data.results;
 
-  React.render(<CharactersList items={items}/>, document.getElementById('content'));
+  React.render(<CharactersGrid items={items}/>, document.getElementById('content'));
 });
