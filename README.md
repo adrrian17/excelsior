@@ -33,6 +33,6 @@ And finally open the ```index.html``` file in your browser. Have fun :ghost:
 MIT © [Adrian Ayala]
 
 [React]: http://facebook.github.io/react/
-[Marvel's API]: developer.marvel.com
+[Marvel's API]: http://developer.marvel.com
 [developer.marvel.com]: http://developer.marvel.com
 [Adrian Ayala]: http://adrianayala.mx
