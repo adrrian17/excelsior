@@ -37,8 +37,8 @@ var Character = React.createClass({
   getLinks: function() {
     return (
       <p>
-        <a href={this.props.character.urls[0].url}>Wiki</a>|
-        <a href={this.props.character.urls[1].url}>More details</a>
+        <a href={this.props.character.urls[0].url}>Wiki </a>|
+        <a href={this.props.character.urls[1].url}> More details</a>
       </p>
     )
   },
