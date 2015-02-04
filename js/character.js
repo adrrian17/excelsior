@@ -5,7 +5,10 @@ var Character = React.createClass({
     var image = 'http://placehold.it/250x250';
 
     if(this.props.character.thumbnail) {
-      image = this.props.character.thumbnail.path+'.'+this.props.character.thumbnail.extension;
+      var path = this.props.character.thumbnail.path;
+      var extension = this.props.character.thumbnail.extension;
+
+      image = path+'.'+extension;
     }
 
     return (
@@ -22,7 +25,7 @@ var Character = React.createClass({
   },
 
   getDescription: function() {
-    var description = this.props.character.description ? this.props.character.description : 'No description'
+    var description = this.props.character.description || 'No description';
 
     return (
       <p>
