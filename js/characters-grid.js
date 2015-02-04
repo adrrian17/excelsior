@@ -2,7 +2,7 @@ var Character = require('./character');
 var React = require('react');
 var chunk = require('lodash/array/chunk');
 
-var CharactersList = React.createClass({
+var CharactersGrid = React.createClass({
   getCharacters: function() {
     var items = chunk(this.props.items, 4)
 
@@ -30,4 +30,4 @@ var CharactersList = React.createClass({
   }
 });
 
-module.exports = CharactersList;
+module.exports = CharactersGrid;
