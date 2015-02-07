@@ -1,5 +1,6 @@
 var CharactersGrid = require('./characters-grid');
 var NavBar = require('./navbar');
+var Pager = require('./pager');
 var React = require('react');
 var API = require('./api');
 
@@ -20,6 +21,7 @@ var ExcelsiorApp = React.createClass({
         <NavBar/>
         <div className='container'>
           <CharactersGrid items={this.state.items}/>
+          <Pager/>
         </div>
       </div>
     );
