@@ -1,24 +1,17 @@
 var CharactersGrid = require('./characters-grid');
 var NavBar = require('./navbar');
 var React = require('react');
-var request = require('superagent');
-
-// Marvel public API key
-require('./api-key');
-
-var baseUrl = 'http://gateway.marvel.com'
-var charactersUrl = baseUrl+'/v1/public/characters?'+key
+var API = require('./api');
 
 var ExcelsiorApp = React.createClass({
   getInitialState: function() {
-    return { items: '' };
+    return { items: [] };
   },
 
   componentDidMount: function() {
-    request.get(charactersUrl, function(res) {
-        this.setState({ items: res.body.data.results })
-      }.bind(this)
-    );
+    API.getCharacters().then(function(res) {
+      this.setState({ items: res });
+    }.bind(this));
   },
 
   render: function() {
