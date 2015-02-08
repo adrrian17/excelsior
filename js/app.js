@@ -6,12 +6,35 @@ var API = require('./api');
 
 var ExcelsiorApp = React.createClass({
   getInitialState: function() {
-    return { items: [] };
+    return {
+      items: [],
+      currentPage: 0,
+      offset: 0
+    };
   },
 
   componentDidMount: function() {
     API.getCharacters().then(function(res) {
-      this.setState({ items: res });
+      this.setState({ items: res.results });
+    }.bind(this));
+  },
+
+  handlePageRequest: function(page) {
+    var currentPage = this.state.currentPage;
+    var offset;
+
+    if(page > currentPage) {
+      offset = this.state.offset + 20;
+    } else {
+      offset = this.state.offset - 20;
+    }
+
+    API.getCharacters(offset).then(function(res) {
+      this.setState({
+        items: res.results,
+        currentPage: page,
+        offset: offset
+      });
     }.bind(this));
   },
 
@@ -21,7 +44,7 @@ var ExcelsiorApp = React.createClass({
         <NavBar/>
         <div className='container'>
           <CharactersGrid items={this.state.items}/>
-          <Pager/>
+          <Pager page={this.state.currentPage} changePage={this.handlePageRequest}/>
         </div>
       </div>
     );
