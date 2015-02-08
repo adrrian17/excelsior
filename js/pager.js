@@ -2,18 +2,29 @@ var React = require('react');
 
 var Pager = React.createClass({
   getInitialState: function() {
-    return { page: 0 };
+    return { currentPage: this.props.page };
+  },
+
+  handleClick: function(e) {
+    e.preventDefault();
+
+    var page = e.target.dataset.page;
+
+    this.setState({ currentPage: page });
+    this.props.changePage(page)
   },
 
   getPagerLinks: function() {
-    if(this.state.page > 0) {
+    var page = this.state.currentPage;
+
+    if(page > 0) {
       return (
         <div>
           <li>
-            <a href="#">Previous</a>
+            <a href="#" data-page={page - 1} onClick={this.handleClick}>Previous</a>
           </li>
           <li>
-            <a href="#">Next</a>
+            <a href="#" data-page={page + 1} onClick={this.handleClick}>Next</a>
           </li>
         </div>
       )
@@ -21,7 +32,7 @@ var Pager = React.createClass({
       return (
         <div>
           <li>
-            <a href="#">Next</a>
+            <a href="#" data-page={page + 1} onClick={this.handleClick}>Next</a>
           </li>
         </div>
       )
