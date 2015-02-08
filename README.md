@@ -22,7 +22,7 @@ $ npm run watch
 And finally open the ```index.html``` file in your browser. Have fun :ghost:
 
 ## TODO
-- [ ] Add pagination
+- [X] Add pagination
 - [ ] Fix the mobile layout
 - [ ] Implement the order endpoints of the API
 - [ ] Add server side rendering
