@@ -25,8 +25,10 @@ And finally open the ```index.html``` file in your browser. Have fun :ghost:
 - [X] Add pagination
 - [ ] Fix the mobile layout
 - [ ] Implement the order endpoints of the API
-- [ ] Add server side rendering
+- [X] Add server side rendering
 - [ ] Upload the app to Heroku
+- [ ] Add colors and a better design
+- [ ] Implement ```gulp``` tasks
 
 ## License
 
