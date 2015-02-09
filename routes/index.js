@@ -1,10 +1,15 @@
-var express = require('express');
-var router = express.Router();
+// To use JSX inside Node
+require('node-jsx').install();
 
-/* GET home page. */
+var express   = require('express');
+var router    = express.Router();
+var React     = require('React');
+var Excelsior = React.createFactory(require('../components/app'));
 
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  var app = React.renderToString(Excelsior());
+
+  res.render('index', { app: app });
 });
 
 module.exports = router;
