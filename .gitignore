@@ -31,7 +31,7 @@ node_modules
 .DS_Store
 
 # Public Key
-js/api-key.js
+components/api-key.js
 
 # Browserify Bundle
-js/bundle.js
+public/js/bundle.js

@@ -2,7 +2,7 @@ var request = require('superagent');
 var Q = require('q');
 
 // Marvel public API key
-require('./api-key');
+var key = require('./api-key');
 
 var charactersUrl = 'http://gateway.marvel.com/v1/public/characters'
 
