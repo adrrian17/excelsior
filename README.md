@@ -29,6 +29,7 @@ And finally open the ```index.html``` file in your browser. Have fun :ghost:
 - [ ] Upload the app to Heroku
 - [ ] Add colors and a better design
 - [ ] Implement ```gulp``` tasks
+- [ ] Add loading animations
 
 ## License
 
