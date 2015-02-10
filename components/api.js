@@ -2,7 +2,7 @@ var request = require('superagent');
 var Q = require('q');
 
 // Marvel public API key
-var key = require('./api-key');
+var marvelKey = require('./api-key');
 
 var charactersUrl = 'http://gateway.marvel.com/v1/public/characters'
 
@@ -11,7 +11,7 @@ exports.getCharacters = function(offset) {
 
   request
     .get(charactersUrl)
-    .query({ apikey: key })
+    .query({ apikey: marvelKey.key })
     .query({ offset: offset })
     .end(function(res) {
       deferred.resolve(res.body.data);
