@@ -22,7 +22,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "node ./bin/www",
-    "watch": "watchify -v -o public/js/bundle.js components/main.js"
+    "watch": "watchify -v -o public/js/bundle.js components/main.js",
+    "build": "browserify components/main.js | uglifyjs > public/js/bundle.js"
   },
   "repository": {
     "type": "git",
