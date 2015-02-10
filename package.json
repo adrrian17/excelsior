@@ -22,7 +22,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node ./bin/www",
-    "watch": "watchify -v -o public/js/bundle.js component/main.js"
+    "watch": "watchify -v -o public/js/bundle.js components/main.js"
   },
   "repository": {
     "type": "git",
