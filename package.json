@@ -4,26 +4,27 @@
   "description": "Testing out Marvel's API with React ",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "~1.10.0",
     "browserify": "^8.1.1",
+    "cookie-parser": "~1.3.3",
+    "debug": "~2.1.0",
+    "envify": "^3.2.0",
+    "express": "~4.11.0",
+    "jade": "~1.9.1",
     "lodash": "^3.1.0",
+    "morgan": "~1.5.0",
     "q": "^1.1.2",
     "react": "^0.12.2",
     "reactify": "^1.0.0",
-    "superagent": "^0.21.0",
-    "watchify": "^2.3.0",
-    "express": "~4.11.0",
     "serve-favicon": "~2.2.0",
-    "morgan": "~1.5.0",
-    "cookie-parser": "~1.3.3",
-    "body-parser": "~1.10.0",
-    "debug": "~2.1.0",
-    "jade": "~1.9.1"
+    "superagent": "^0.21.0",
+    "watchify": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node ./bin/www",
-    "watch": "watchify -v -o public/js/bundle.js components/main.js",
-    "build": "browserify components/main.js | uglifyjs > public/js/bundle.js"
+    "start": "npm run build && node ./bin/www",
+    "watch": "watchify -v -o public/js/bundle.js -t envify components/main.js",
+    "build": "browserify components/main.js -t envify | uglifyjs > public/js/bundle.js"
   },
   "repository": {
     "type": "git",
