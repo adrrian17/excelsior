@@ -24,7 +24,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "npm run build && node ./bin/www",
+    "postinstall": "npm run build",
+    "start": "node ./bin/www",
     "watch": "watchify -v -o public/js/bundle.js -t envify components/main.js",
     "build": "browserify components/main.js -t envify | uglifyjs > public/js/bundle.js"
   },
