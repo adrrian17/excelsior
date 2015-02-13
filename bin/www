@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+
+// To use JSX inside Node
+require('node-jsx').install();
+
 var debug = require('debug')('expressapp');
 var app = require('../server');
 
