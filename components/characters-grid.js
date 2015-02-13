@@ -10,9 +10,9 @@ var CharactersGrid = React.createClass({
       <div>
         {items.map(function(item, index) {
           return (
-            <div className='row'>
+            <div key={index} className='row'>
               {item.map(function(char, index) {
-                return <Character character={char}/>;
+                return <Character key={char.id} character={char}/>;
               })}
             </div>
           )
