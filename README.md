@@ -17,7 +17,7 @@ To start the app use the following commands:
 # Install the dependencies
 $ npm install
 
-# Create the bundle.js file 
+# Create the bundle.js file
 $ npm run build
 
 # Start the server
@@ -34,7 +34,7 @@ And finally go to [localhost:3000] in your browser. Have fun :ghost:
 - [ ] Implement the order endpoints of the API
 - [ ] Add colors and a better design
 - [ ] Implement ```gulp``` tasks
-- [ ] Add loading animations
+- [X] Add loading animations
 - [ ] Add routes for the pages
 - [ ] Implement search form
 
