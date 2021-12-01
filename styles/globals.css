@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#logo {
+  font-family: 'Bangers', cursive;
+  @apply text-5xl;
+}
+
+.nav-link {
+  @apply inline-flex items-center 
+  p-3 text-red-700 
+  hover:bg-red-700
+  hover:text-white;
+}
+
+.github-repo {
+  @apply inline-flex items-center p-3
+  border-2 text-red-700 border-red-700 
+  hover:bg-red-700 
+  hover:text-white rounded;
+}
